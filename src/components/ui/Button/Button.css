@@ -1,0 +1,38 @@
+/* Estructura */
+
+/* Color */
+.btn__primary {
+  background-color: transparent;
+  color: var(--color__primary);
+  border-color: var(--color__primary);
+}
+
+.btn__secondary {
+  background-color: transparent;
+  color: var(--color__blanco__estatico);
+  border-color: var(--color__blanco__estatico);
+}
+
+.btn__cta {
+  background-color: var(--color__primary);
+  color: var(--color__blanco__estatico);
+  border-color: var(--color__blanco__estatico);
+}
+
+/* Tamaño */
+.btn__sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.btn__md {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.btn__lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+}
+
+/* Efectos */

@@ -1,0 +1,91 @@
+.error__data__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing__lg);
+  padding: var(--spacing__md) var(--spacing__sm);
+  justify-content: center;
+  min-height: 100dvh;
+}
+.error__title__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.error__title,
+.error__title::after {
+  position: relative;
+  margin: 0;
+  text-align: center;
+}
+.error__title::after {
+  --move1: inset(50% 50% 50% 50%);
+  --move2: inset(31% 0 40% 0);
+  --move3: inset(39% 0 15% 0);
+  --move4: inset(45% 0 40% 0);
+  --move5: inset(45% 0 6% 0);
+  --move6: inset(14% 0 61% 0);
+  clip-path: var(--move1);
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  animation: 3s steps(2, end) infinite glitch_4011;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px 1px 0 red;
+}
+.error__description {
+  margin: 0;
+  color: var(--color__neutral-3);
+  text-shadow: 0 0 5px var(--color__primary__liso);
+}
+.error__button {
+  width: 100%;
+  max-width: 210px;
+  min-height: 49px;
+  background-color: transparent;
+  color: var(--color__primary__liso);
+  border: 1px solid var(--color__primary__liso);
+  cursor: pointer;
+  transition: 0.5s;
+}
+.error__button:hover {
+  background: var(--color__primary);
+  border: 1px solid var(--color__blanco__estatico);
+  color: var(--color__blanco__estatico);
+}
+.error__button:active {
+  filter: brightness(0.8);
+  box-shadow: 0 0 15px var(--color__primary__estatico);
+  box-shadow: 0 0 15px var(--color__primary);
+}
+@keyframes glitch_4011 {
+  0% {
+    clip-path: var(--move2);
+    transform: translate(-10px, 10px);
+  }
+  10% {
+    clip-path: var(--move3);
+    transform: translate(10px, 0);
+  }
+  20% {
+    clip-path: var(--move4);
+    transform: translate(-10px, -10px);
+  }
+  30% {
+    clip-path: var(--move5);
+    transform: translate(10px, 10px);
+  }
+  100%,
+  33% {
+    clip-path: var(--move1);
+    transform: translate(0, 0);
+  }
+}

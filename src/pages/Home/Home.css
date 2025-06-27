@@ -1,0 +1,13 @@
+:root.wolf .home__container {
+  background-image: url('/public/images/dark/home/home_background.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.home__section {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  gap: var(--spacing__md);
+  justify-content: space-between;
+}

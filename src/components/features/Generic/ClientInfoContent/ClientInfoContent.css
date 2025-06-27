@@ -1,0 +1,25 @@
+.card__info__projects__colaborations__tags__container,
+.card__info__projects__social__tags__container {
+    display: flex;
+    gap: var(--spacing__sm);
+    flex-wrap: wrap;
+}
+
+.card__info__projects__social__tag,
+.card__info__projects__colaborations__tag {
+    background:rgb(204, 204, 204);
+    border-radius: 20px;
+    padding: .5rem;
+    color: var(--color__negro__estatico);
+    cursor: pointer;
+    border: 1px solid var(--color__negro__estatico);
+    transition: all .5s;
+}
+
+.card__info__projects__colaborations__tag:hover,
+.card__info__projects__social__tag:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--color__primary__liso);
+    border-color: var(--color__primary__liso);
+    color: var(--color__primary__liso);
+}

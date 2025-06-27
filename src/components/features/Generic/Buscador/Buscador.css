@@ -1,0 +1,56 @@
+.buscador__container {
+  background: url('/images/light/portfolio/portfolio_image.jpg') 0 0 / cover;
+  max-width: 1281px;
+  height: 350px;
+  margin: var(--spacing__md);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: var(--spacing__sm);
+  background-position-x: center;
+}
+.wolf .buscador__container {
+  background: url('/images/dark/pack/pack_image.jpg') 0 0 / cover;
+  background-position-x: center;
+}
+.buscador__title {
+  filter: brightness(1.3);
+  width: 100%;
+  text-align: center;
+}
+.buscador__bar__container {
+  width: 100%;
+  max-width: 500px;
+  height: 33px;
+  position: relative;
+  outline: 2px solid var(--color__negro__estatico);
+}
+.buscador__bar {
+  width: 100%;
+  height: 100%;
+  padding: 0 var(--spacing__sm);
+  outline: 0;
+  border: none;
+}
+.buscador__bar:focus {
+  filter: brightness(1.5);
+}
+.buscador__button__container {
+  background-color: var(--color__secondary);
+  height: 33px;
+  width: 33px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  outline: 2px solid var(--color__negro__estatico);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.buscador__button {
+  color: var(--color__negro__estatico);
+  font-size: var(--font-size__body);
+}

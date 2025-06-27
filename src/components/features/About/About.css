@@ -1,0 +1,116 @@
+.about__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 533px;
+}
+.about__section__first__title {
+  text-align: center;
+  width: clamp(200px, 90vw, 900px);
+}
+.about__section__text {
+  text-align: left;
+}
+.about__section__button {
+  max-width: 172px;
+  min-height: 49px;
+  background-color: transparent;
+  color: var(--color__primary__liso);
+  border: 1px solid var(--color__primary__liso);
+  cursor: pointer;
+  transition: 0.5s;
+}
+.about__section__button:hover {
+  background: var(--color__primary);
+  border: 1px solid var(--color__blanco__estatico);
+  color: var(--color__blanco__estatico);
+}
+.about__section__button:active {
+  filter: brightness(0.8);
+  box-shadow: 0 0 15px var(--color__primary__estatico);
+  box-shadow: 0 0 15px var(--color__primary);
+}
+.about__section__glitch__words {
+  position: relative;
+  color: #000;
+  font-family: var(--font-family__primary);
+  white-space: nowrap;
+  overflow: visible;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: 1s;
+}
+.about__section__glitch__words:hover {
+  color: #800020;
+  text-shadow: 0 0 5px red;
+}
+.about__section__glitch__words:hover::after,
+.about__section__glitch__words:hover::before {
+  animation-play-state: paused;
+  text-shadow: none;
+  filter: none;
+  opacity: 0;
+}
+.about__section__glitch__words::after,
+.about__section__glitch__words::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  height: 100%;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: 1s;
+}
+.about__section__glitch__words::before {
+  text-shadow: -2px 0 #800020;
+  animation: 1s linear infinite alternate-reverse glitch-flicker-before;
+  clip-path: inset(0 0 20% 0);
+}
+.about__section__glitch__words::after {
+  text-shadow: 2px 0 #800020;
+  animation: 1.2s linear infinite alternate glitch-flicker-after;
+  clip-path: inset(20% 0 0 0);
+}
+@keyframes glitch-flicker-before {
+  0%,
+  100% {
+    transform: translateX(-50%) translate(0);
+  }
+  20% {
+    transform: translateX(-50%) translate(-3px, 1px) skew(-5deg);
+  }
+  40% {
+    transform: translateX(-50%) translate(3px, -2px) skew(5deg);
+  }
+  60% {
+    transform: translateX(-50%) translate(-2px, 2px) skew(-3deg);
+  }
+  80% {
+    transform: translateX(-50%) translate(2px, -2px) skew(3deg);
+  }
+}
+@keyframes glitch-flicker-after {
+  0%,
+  100% {
+    transform: translateX(-50%) translate(0);
+  }
+  20% {
+    transform: translateX(-50%) translate(2px, -1px) skew(4deg);
+  }
+  40% {
+    transform: translateX(-50%) translate(-3px, 2px) skew(-4deg);
+  }
+  60% {
+    transform: translateX(-50%) translate(3px, -3px) skew(2deg);
+  }
+  80% {
+    transform: translateX(-50%) translate(-1px, 1px) skew(-2deg);
+  }
+}

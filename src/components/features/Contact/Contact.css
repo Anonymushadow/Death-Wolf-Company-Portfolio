@@ -1,0 +1,144 @@
+.contact__section {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing__xl) * 2);
+  padding: var(--spacing__md) 0 calc(var(--spacing__xl) * 2) 0;
+  align-items: center;
+}
+.contact__section__content__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(4rem, 10vw, 12.5rem) clamp(1.5rem, 6vw, 5.875rem);
+}
+.contact__section__content__container,
+.contact__section__content__title__container {
+  width: 100%;
+}
+.contact__section__content__title__container p {
+  font-weight: 700;
+}
+.contact__section__content__title__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 630px;
+}
+.contact__section__content__form {
+  width: 100%;
+  max-width: 532px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing__md);
+}
+.contact__section__content__form__button__container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: var(--spacing__sm) 0;
+}
+.contact__section__content__form input,
+.contact__section__content__form textarea {
+  border: none;
+  outline: 0;
+  border-bottom: 2px solid var(--color__primary__liso);
+  padding: var(--spacing__sm) var(--spacing__md);
+  background: linear-gradient(to top, rgba(78, 7, 137, 0.25), transparent);
+}
+.contact__section__content__form input::placeholder,
+.contact__section__content__form textarea::placeholder {
+  color: #3c3c3c;
+}
+.contact__section__social__item__icon,
+.contact__section__social__item__link:hover,
+.wolf .contact__section__content__form input,
+.wolf .contact__section__content__form textarea {
+  color: var(--color__primary__liso);
+}
+.wolf .contact__section__content__form input::placeholder,
+.wolf .contact__section__content__form textarea::placeholder {
+  color: #64358b;
+}
+.contact__section__content__form input:focus,
+.contact__section__content__form textarea:focus {
+  outline: 1px solid var(--color__primary__liso);
+}
+.contact__section__content__form button {
+  background: var(--color__primary);
+  border: 1px solid var(--color__blanco__estatico);
+  color: var(--color__blanco__estatico);
+  max-width: 220px;
+  max-height: 41px;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: var(--spacing__xs) var(--spacing__sm);
+}
+.contact__section__content__form button:hover {
+  background-color: transparent;
+  color: var(--color__primary__liso);
+  border: 1px solid var(--color__primary__liso);
+}
+.contact__section__content__form button:active {
+  filter: brightness(0.8);
+  box-shadow: 0 0 15px var(--color__primary__liso);
+  box-shadow: 0 0 15px var(--color__primary);
+}
+.wolf .contact__section__content__form button:hover {
+  background: 0 0;
+  color: var(--color__primary__liso);
+  border: 1px solid var(--color__primary__liso);
+}
+.contact__section__social {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing__md);
+  flex-wrap: wrap;
+}
+.contact__section__social__item {
+  width: 200px;
+  background: var(--color__secondary);
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing__sm);
+  gap: var(--spacing__sm);
+  aspect-ratio: 1/1;
+}
+.contact__section__social__item__icon {
+  font-size: 51px;
+}
+.contact__section__social__item__title {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color__negro__estatico);
+  text-transform: uppercase;
+}
+.contact__section__social__item__link {
+  color: var(--color__negro__estatico);
+  word-break: break-all;
+  text-align: center;
+  cursor: pointer;
+}
+.wolf input:-webkit-autofill,
+.wolf input:-webkit-autofill:focus,
+.wolf input:-webkit-autofill:hover,
+.wolf textarea:-webkit-autofill,
+.wolf textarea:-webkit-autofill:focus,
+.wolf textarea:-webkit-autofill:hover {
+  -webkit-text-fill-color: var(--color__primary__liso);
+  -webkit-box-shadow: 0 0 0 transparent inset;
+  transition: background-color 5000s ease-in-out;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover {
+  -webkit-text-fill-color: var(--color__negro__estatico);
+  -webkit-box-shadow: 0 0 0 transparent inset;
+  transition: background-color 5000s ease-in-out;
+}

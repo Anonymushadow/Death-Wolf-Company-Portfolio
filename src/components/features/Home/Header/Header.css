@@ -1,0 +1,27 @@
+.home__header__section {
+  display: flex;
+  gap: var(--spacing__md);
+}
+.home__header__section__img__container,
+.home__header__section__text__container {
+  flex: 1;
+}
+.home__header__section__text__container {
+  width: clamp(270px, 80vw, 550px);
+}
+.home__header__section__img__container {
+  width: clamp(270px, 80vw, 405px);
+}
+.home__header__section__img {
+  width: 100%;
+}
+.home__header__section__text__content {
+  color: var(--color__neutral-3);
+}
+@media (max-width: 1102px) {
+  .home__header__section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

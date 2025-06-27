@@ -1,0 +1,14 @@
+.about__container {
+  align-items: center;
+  justify-content: center;
+}
+:root .about__container {
+  background-image: url('/images/light/about/about_background.png');
+  background-size: cover;
+  background-position: center;
+}
+:root.wolf .about__container {
+  background-image: url('/images/dark/about/about_background.png');
+  background-size: cover;
+  background-position: center;
+}

@@ -1,0 +1,6 @@
+.dark__section {
+  background-image: url('/public/images/dark/dark/dark_bg.png');
+  background-position: right;
+  background-size: cover;
+  padding: var(--spacing__xl) var(--spacing__md);
+}

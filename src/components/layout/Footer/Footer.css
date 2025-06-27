@@ -1,0 +1,175 @@
+.footer__content__contacts__data h6,
+.footer__content__legal h6,
+.footer__content__menu h6,
+.footer__copyright__container__text__container h5 {
+  margin: 0;
+}
+.footer__content__contacts__container,
+.footer__content__container,
+.footer__content__legal__container,
+.footer__content__menu__container {
+  flex-direction: column;
+  display: flex;
+}
+.footer {
+  width: 100%;
+  background: var(--color__primary);
+  position: relative;
+}
+.footer::before {
+  content: '';
+  height: 0;
+  position: absolute;
+  inset: 0;
+  z-index: calc(var(--z-index__modal) - 10);
+  background: var(--color__negro__estatico);
+  pointer-events: none;
+}
+.footer__transition.footer::before {
+  height: 100%;
+  transition: height 3s;
+}
+.footer__fade__out.footer::before {
+  opacity: 0;
+  transition: opacity 3s;
+}
+.footer__content__container {
+  width: 100%;
+}
+.footer__copyright__container {
+  display: flex;
+  justify-content: center;
+}
+.footer__content__data__container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: var(--spacing__lg) var(--spacing__md);
+}
+.footer__content__title {
+  color: var(--color__secondary);
+  font-family: var(--font__secondary);
+  margin: 0;
+}
+.footer__content__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.footer__content__legal__item:hover,
+.footer__content__menu__item:hover {
+  text-shadow: 0 0 9px var(--color__blanco__estatico);
+}
+.footer__content__contacts {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer__content__contacts,
+.footer__content__contacts__rrss,
+.footer__content__legal__container,
+.footer__content__menu__container {
+  gap: var(--spacing__md);
+}
+.footer__content__contacts__data,
+.footer__content__contacts__rrss,
+.footer__content__legal {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+.footer__content__contacts__rrss__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__content__contacts__rrss__item,
+.footer__lang__icon {
+  color: var(--color__blanco__estatico);
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.footer__content__contacts__rrss__item:hover,
+.footer__lang__icon:hover {
+  text-shadow: 0 0 9px var(--color__neutral-3);
+  transform: scale(1.1);
+}
+.footer__content__button__unleash__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing__md);
+}
+.footer__content__button__unleash {
+  width: min(90%, 216px);
+  height: 49px;
+  background-color: transparent;
+  color: var(--color__secondary);
+  border: 1px solid var(--color__blanco__estatico);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer__content__button__unleash:hover {
+  background: var(--color__secondary);
+  color: var(--color__primary__liso);
+  border-color: var(--color__primary__liso);
+  animation: 0.8s infinite alternate beastPulse;
+}
+.footer__copyright__container__text__container {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid
+    linear-gradient(
+      to-right transparent var(--color__blanco__estatico) transparent
+    );
+  position: relative;
+  padding: var(--spacing__md);
+}
+.footer__copyright__container__text__container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color__blanco__estatico),
+    transparent
+  );
+}
+@keyframes beastPulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05) rotate(0.5deg);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .footer__content__data__container {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing__xl);
+  }
+  .footer__content__contacts__data,
+  .footer__content__legal,
+  .footer__content__menu {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing__md);
+  }
+  .footer__content__legal p {
+    margin: 0;
+  }
+  .footer__content__title {
+    text-align: center;
+  }
+}

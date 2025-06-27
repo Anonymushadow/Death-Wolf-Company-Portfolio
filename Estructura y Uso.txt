@@ -1,0 +1,83 @@
+📁 public/
+    └── assets/ → imágenes, videos, íconos, etc.
+
+📁 src/
+│
+├── 📁 components/
+│   ├── 📁 ui/
+│   │   ├── 📁 Button/
+│   │   │   ├── Button.jsx
+│   │   │   ├── Button.css
+│   │   │   └── index.js
+│   │   ├── 📁 Input/
+│   │   │   ├── Input.jsx
+│   │   │   ├── Input.css
+│   │   │   └── index.js
+│   │   └── 📁 RadioButton/
+│   │       ├── RadioButton.jsx
+│   │       ├── RadioButton.css
+│   │       └── index.js
+│   │
+│   ├── 📁 layout/
+│   │   ├── 📁 Navbar/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Navbar.css
+│   │   │   └── index.js
+│   │   └── 📁 Footer/
+│   │       ├── Footer.jsx
+│   │       ├── Footer.css
+│   │       └── index.js
+│   │
+│   ├── 📁 feedback/
+│   │   ├── 📁 Loader/
+│   │   ├── 📁 Toast/
+│   │   └── etc...
+│   │
+│   └── 📁 effects/
+│       ├── 📁 WaveEffect/
+│       └── etc...
+│
+├── 📁 features/ → (antes era "project")
+│   ├── 📁 Login/
+│   │   ├── LoginForm.jsx
+│   │   ├── LoginForm.css
+│   │   └── index.js
+│   ├── 📁 Dashboard/
+│   │   ├── Dashboard.jsx
+│   │   ├── Dashboard.css
+│   │   └── index.js
+│   └── etc...
+│
+├── 📁 pages/
+│   ├── 📁 Home/
+│   │   ├── Home.jsx
+│   │   ├── Home.css
+│   │   └── index.js
+│   ├── 📁 About/
+│   └── etc...
+│
+├── 📁 styles/
+│   ├── base/ → resets, normalize, variables
+│   │   ├── reset.css
+│   │   ├── normalize.css
+│   │   ├── variables.css
+│   └── global.css → estilos globales (tipografías, body, etc.)
+│
+├── 📁 config/
+│   ├── styles.js
+│   └── components.js
+│
+├── 📁 hooks/
+├── 📁 contexts/
+├── 📁 modules/
+├── 📁 routes/
+│   └── router.js
+│
+└── App.js
+
+
+/* IMPORTAR */
+import { Button } from '@components/ui/Button';
+import { Navbar } from '@components/layout/Navbar';
+import '@styles/base/variables.main.css';
+import '@config/styles.js';

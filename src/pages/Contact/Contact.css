@@ -1,0 +1,12 @@
+.contact__section__wolf__bg {
+  background-image: url('/public/images/dark/contact/contact_background.png');
+}
+.contact__section__sheep__bg {
+  background-image: url('/public/images/light/contact/contact_background.png');
+}
+.contact__section__sheep__bg,
+.contact__section__wolf__bg {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

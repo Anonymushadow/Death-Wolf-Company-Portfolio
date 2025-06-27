@@ -1,0 +1,20 @@
+.portfolio__navbar {
+  width: 100%;
+  border-bottom: 1px solid var(--color__negro__estatico);
+}
+.portfolio__navbar__content {
+  background-color: var(--color__neutral-2);
+  height: 50px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: var(--spacing__xl);
+  padding: 0 var(--spacing__md);
+}
+.portfolio__navbar__link {
+  color: var(--color__negro__estatico);
+}
+.portfolio__navbar__link:hover .portfolio__navbar__link__active,
+.portfolio__navbar__link__selected {
+  color: var(--color__primary__liso);
+}

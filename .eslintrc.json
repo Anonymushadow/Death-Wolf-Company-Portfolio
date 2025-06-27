@@ -1,0 +1,52 @@
+{
+        "env": {
+            "browser": true,
+            "es2021": true
+        },
+        "extends": [
+            "eslint:recommended",
+            "plugin:react/recommended",
+            "plugin:prettier/recommended"
+        ],
+        "plugins": ["react", "import"],
+        "rules": {
+            "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+            "react/react-in-jsx-scope": "off",
+            "no-console": ["error", { "allow": ["warn", "error"] }], // sin console.log vacios
+            "eqeqeq": ["error", "always"],                          // usar === en vez de ==
+            "curly": ["error", "all"],                              // siempre usar llaves en if/else
+            "no-multiple-empty-lines": ["error", { "max": 1 }],     // evita líneas vacías de más
+            "prefer-const": "error",                                // usar const si no se reasigna
+            "arrow-body-style": ["error", "as-needed"],             // funciones arrow limpias
+            "object-curly-spacing": ["error", "always"],            // espacios en objetos { así }
+            "array-bracket-spacing": ["error", "never"],            // no espacios [así]
+            "comma-dangle": ["error", "always-multiline"],          // comas al final si el array/obj salta de línea
+            "quotes": ["error", "double"],                          // comillas dobles (o "single" si preferís)
+            "semi": ["error", "always"],                            // punto y coma obligatorio
+            "indent": ["error", 2],                                 // indentación de 2 espacios
+            "jsx-quotes": ["error", "prefer-double"]                // comillas dobles en JSX
+        },
+        "settings": {
+            "react": {
+            "version": "detect"
+            },
+            "import/order": [
+                "error",
+                    {
+                        "groups": ["builtin", "external", "internal"],
+                        "pathGroups": [
+                            {
+                                "pattern": "@/**",
+                                "group": "internal"
+                            }
+                        ],
+                        "pathGroupsExcludedImportTypes": ["builtin"],
+                        "alphabetize": {
+                            "order": "asc",
+                            "caseInsensitive": true
+                    },
+                    "newlines-between": "always"
+                }
+            ]
+        }
+    }

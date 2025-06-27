@@ -1,0 +1,43 @@
+.home__contact__section {
+  justify-content: space-evenly;
+  display: flex;
+  gap: var(--spacing__md);
+  flex-wrap: wrap;
+  width: 100%;
+}
+.home__contact__section__img__container,
+.home__contact__section__text__container {
+  width: clamp(270px, 80vw, 405px);
+}
+.home__contact__section__text__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.home__contact__section__text__mail {
+  color: var(--color__primary);
+}
+.home__contact__section__text__social__icons__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.home__contact__section__text__social__icon {
+  color: var(--color__primary__liso);
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.home__contact__section__text__social__icon:hover {
+  text-shadow: 0 0 9px var(--color__neutral-3);
+  color: var(--color__neutral-3);
+  transform: scale(1.1);
+}
+.home__contact__section__img__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home__contact__section__img {
+  height: 100%;
+}

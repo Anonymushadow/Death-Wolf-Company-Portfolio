@@ -1,0 +1,17 @@
+.error__data__container__sheep__bg {
+  background-image: url('/images/light/errorPage/error_page_bg.png');
+}
+.error__data__container__wolf__bg {
+  background-image: url('/images/dark/errorPage/error_page_bg.png');
+}
+.error__data__container__sheep__bg,
+.error__data__container__wolf__bg {
+  background-position: bottom;
+  background-size: cover;
+}
+@media screen and (max-width: 550px) {
+  .error__data__container__sheep__bg,
+  .error__data__container__wolf__bg {
+    background-position: left bottom;
+  }
+}

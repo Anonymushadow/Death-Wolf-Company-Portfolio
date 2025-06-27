@@ -1,0 +1,75 @@
+.glitch__effect__container {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  background: 0 0;
+}
+.glitch__effect__container__transition {
+  animation: 0.1s steps(1, end) infinite glitchHell;
+  filter: invert(1) hue-rotate(-300deg) contrast(6) blur(5px) sepia(0.7)
+    brightness(0.5) saturate(10);
+  backdrop-filter: invert(1) blur(2px);
+  background: rgba(255, 0, 0, 0.05);
+}
+.glitch__effect__container__blackout {
+  background: var(--color__negro__estatico) !important;
+  opacity: 1 !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  transition: none !important;
+}
+.glitch__effect__container__fade__out {
+  animation: 3s forwards fadeToBlack;
+  backdrop-filter: none;
+  filter: none;
+  background: var(color__negro__estatico);
+}
+.glitch__effect__flash {
+  background: var(--color__blanco__estatico);
+  opacity: 1 !important;
+  filter: brightness(900%) contrast(900%) blur(0.5px);
+  transition: none;
+  animation: 80ms ease-in-out infernalFlash;
+}
+@keyframes glitchHell {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.01) rotate(0.5deg);
+  }
+  40% {
+    opacity: 0.3;
+    transform: scale(0.99) rotate(-0.5deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.02) rotate(1deg);
+  }
+  80% {
+    opacity: 0.5;
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes fadeToBlack {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes infernalFlash {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

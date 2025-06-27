@@ -1,0 +1,90 @@
+.cards__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.card__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 306px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding: var(--spacing__md);
+  transition: 0.5s;
+}
+.card__filter {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    var(--color__primary__liso),
+    var(--color__negro__estatico)
+  );
+  transition: opacity 0.5s;
+  z-index: 1;
+  mix-blend-mode: hue;
+}
+.card__container:hover .card__filter {
+  opacity: 0;
+}
+.card__text__container {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--color__blanco__estatico);
+  max-width: 775px;
+  min-height: 157px;
+  padding: var(--spacing__sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  transition: gap 0.5s;
+}
+.card__title {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+.card__description__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing__md);
+  max-height: 0;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  transition: 0.5s;
+}
+.card__description {
+  margin: 0;
+}
+.card__container:hover .card__description__container {
+  max-height: 200px;
+}
+.card__container:hover .card__text__container {
+  gap: var(--spacing__md);
+}
+.card__description__button {
+  width: 172px;
+  min-height: 41px;
+  background-color: transparent;
+  color: var(--color__primary__liso);
+  border: 1px solid var(--color__primary__liso);
+  cursor: pointer;
+  transition: 0.5s;
+}
+.card__description__button:hover {
+  background: var(--color__primary);
+  border: 1px solid var(--color__blanco__estatico);
+  color: var(--color__blanco__estatico);
+}
+.card__description__button:active {
+  filter: brightness(0.8);
+  box-shadow: 0 0 15px var(--color__primary__estatico);
+  box-shadow: 0 0 15px var(--color__primary);
+}
