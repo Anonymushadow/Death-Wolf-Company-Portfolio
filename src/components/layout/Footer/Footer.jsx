@@ -2,7 +2,7 @@ import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
 import { useThemeTransition } from '@contexts/TransitionThemeContext';
-import { useLang } from '@contexts/languageContext';
+import { useLang } from '@contexts/LanguageContext';
 import { socialMedias } from '@data/common/social';
 
 export const Footer = () => {

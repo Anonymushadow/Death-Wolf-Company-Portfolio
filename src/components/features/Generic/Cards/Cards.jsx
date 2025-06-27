@@ -1,7 +1,6 @@
 // Cards.jsx
 import "./Cards.css";
 import { useState } from "react";
-import { clientsImages } from "@data/common/clientsImages";
 import { CardInfo } from "../CardInfo/CardInfo";
 
 export const Cards = ({ items, cta, getTitle, getText, getImage, isPack }) => {

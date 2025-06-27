@@ -5,7 +5,7 @@ import { ProjectInfoContent } from "../ProjectInfoContent/ProjectInfoContent";
 import { ClientInfoContent } from "../ClientInfoContent/ClientInfoContent";
 import { useState } from "react";
 
-export const CardInfo = ({ data, closeInfo, isPack, setData }) => {
+export const CardInfo = ({ data, closeInfo, isPack }) => {
   const { darkMode } = useThemeTransition();
   const [renderPack, setRenderPack] = useState(isPack);
   const [renderItem, setRenderItem] = useState(null);
