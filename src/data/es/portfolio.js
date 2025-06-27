@@ -223,17 +223,17 @@ const info = {
       title: 'Nuestro Trabajo',
       items: [
         {
-          img: '/public/icons/Portfolio/portfolio_vision_icon.png',
+          img: '/icons/Portfolio/portfolio_vision_icon.png',
           title: 'Vision',
           text: 'Anticipamos el cambio. Observamos desde la cima para detectar lo que otros no ven. No improvisamos: planeamos con precisión',
         },
         {
-          img: '/public/icons/Portfolio/portfolio_direccion_icon.png',
+          img: '/icons/Portfolio/portfolio_direccion_icon.png',
           title: 'Direccion',
           text: 'No seguimos caminos marcados. Creamos los propios. Guiamos cada proyecto con carácter, estética y propósito.',
         },
         {
-          img: '/public/icons/Portfolio/portfolio_resultado_icon.png',
+          img: '/icons/Portfolio/portfolio_resultado_icon.png',
           title: 'Resultado',
           text: 'Actuamos con decisión. Ejecutamos con impacto y claridad. El resultado no solo destaca: transforma.',
         },

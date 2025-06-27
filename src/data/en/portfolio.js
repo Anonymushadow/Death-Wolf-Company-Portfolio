@@ -235,17 +235,17 @@ const info = {
     title: 'Our Work',
     items: [
       {
-        img: '/public/icons/Portfolio/portfolio_vision_icon.png',
+        img: '/icons/Portfolio/portfolio_vision_icon.png',
         title: 'Vision',
         text: 'We anticipate change. We observe from above to spot what others miss. We don’t improvise—we strategize.',
       },
       {
-        img: '/public/icons/Portfolio/portfolio_direccion_icon.png',
+        img: '/icons/Portfolio/portfolio_direccion_icon.png',
         title: 'Direction',
         text: 'We don’t follow marked paths. We create our own. We guide each project with character, aesthetics, and purpose.',
       },
       {
-        img: '/public/icons/Portfolio/portfolio_resultado_icon.png',
+        img: '/icons/Portfolio/portfolio_resultado_icon.png',
         title: 'Outcome',
         text: 'We act with intent. We execute with clarity and impact. The result doesn’t just stand out—it transforms.',
       },
