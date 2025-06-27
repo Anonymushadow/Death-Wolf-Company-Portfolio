@@ -62,7 +62,7 @@ export const Footer = () => {
           {/* Logo */}
           <div className="footer__content__img__container">
             <img
-              src="/public/images/generic/footer_logo.png"
+              src="/images/generic/footer_logo.png"
               alt=""
               className="footer__content__img"
             />
