@@ -1,7 +1,7 @@
 // Buscador.jsx
 import "./Buscador.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fontawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export const Buscador = ({ valor, onChange, title, placeholder }) => {
   return (
