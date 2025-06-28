@@ -24,7 +24,7 @@
   animation: 3s forwards fadeToBlack;
   backdrop-filter: none;
   filter: none;
-  background: var(color__negro__estatico);
+  background: var(--color__negro__estatico);
 }
 .glitch__effect__flash {
   background: var(--color__blanco__estatico);

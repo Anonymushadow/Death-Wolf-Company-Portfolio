@@ -11,6 +11,9 @@
 }
 .home__header__section__img__container {
   width: clamp(270px, 80vw, 405px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .home__header__section__img {
   width: 100%;

@@ -12,19 +12,17 @@ export const Liquid = () => {
                     src="/videos/body_transition.webm"
                     playsInline
                     muted
+                    preload="auto"
+                    autoPlay={false}  // NO se lo pongas true para controlarlo manualmente con JS
                     className="liquid__transition__effect"
-                >
-
-                </video>
+                />
             )}
 
             {
                 showFinalTransitionFrame && (
-                    <img
+                    <div
                         ref={bodyBlackout}
-                        src="/images/generic/black.png"
-                        alt="Frame final"
-                        className="liquid__transition__effect__final__frame"
+                        className="liquid__transition__effect__container"
                     />
                 )
             }

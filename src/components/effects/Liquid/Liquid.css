@@ -1,8 +1,10 @@
 .liquid__transition__effect {
   mix-blend-mode: darken;
 }
-.liquid__transition__effect,
-.liquid__transition__effect__final__frame {
+.liquid__transition__effect {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
   position: absolute;
   top: 0;
   left: 0;
@@ -11,19 +13,40 @@
   z-index: 1000;
   pointer-events: none;
   object-fit: cover;
-  display: none;
+  mix-blend-mode: darken;
+}
+.liquid__transition__effect__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1001;
   opacity: 0;
-}
-.liquid__transition__effect__active {
-  display: block;
-  opacity: 1;
-}
-.liquid__transition__effect__final__frame__active {
-  display: block;
-  opacity: 1;
+  background: transparent;
   transition: none;
 }
-.liquid__transition__effect__final__frame__fade__out {
-  transition: opacity 3s;
-  opacity: 0;
+
+.liquid__transition__effect__container__blackout {
+  opacity: 1 !important;
+  background: var(--color__negro__estatico);
+}
+
+.liquid__transition__effect__container__fade__out {
+  animation: fadeToBlack 3s forwards;
+}
+
+@keyframes fadeToBlack {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.liquid__transition__effect__active {
+  opacity: 1;
+  display: block;
 }
