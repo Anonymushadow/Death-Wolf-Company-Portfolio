@@ -7,6 +7,7 @@ import { useThemeTransition } from '@contexts/TransitionThemeContext';
 import { Work } from '@components/features/Portfolio/Work/Work';
 import { Projects } from '@components/features/Portfolio/Projects/Projects';
 import { ScrollToTop } from '@components/effects/ScrollToTop/ScrollToTop';
+import { useEffect } from 'react';
 
 const redirectPairs = [
   { light: '/', dark: '/slaughterhouse', element: <Home /> },
@@ -34,11 +35,44 @@ export const RouterComponent = () => {
     });
   };
 
+  useEffect(() => {
+    const unlockAudios = () => {
+      const audios = [
+        document.getElementById("glitch-start"),
+        document.getElementById("glitch-end"),
+        document.getElementById("liquid")
+      ];
+
+      audios.forEach(audio => {
+        if (audio) {
+          audio.volume = 0;
+          audio.play().then(() => {
+            audio.pause();
+            audio.currentTime = 0;
+            audio.volume = 1;
+          }).catch(() => { });
+        }
+      });
+
+      window.removeEventListener("scroll", unlockAudios);
+      window.removeEventListener("click", unlockAudios);
+    };
+
+    window.addEventListener("scroll", unlockAudios, { once: true });
+    window.addEventListener("click", unlockAudios, { once: true });
+  }, []);
+
+
   return (
     <Router>
       <ScrollToTop />
       <Navbar />
       <GlitchEffect />
+      <div style={{ opacity: 0, pointerEvents: "none", position: "absolute" }}>
+        <audio id="glitch-start" src="/audios/exorcism voices.mp3" preload="auto" />
+        <audio id="glitch-end" src="/audios/meat hit.mp3" preload="auto" />
+        <audio id="liquid" src="/audios/blood.mp3" preload="auto" />
+      </div>
       <div className="content__container">
         <Liquid />
         <Routes>

@@ -1,4 +1,13 @@
-export const playLiquidTransition = ({ bar, circle, footer, body, setDarkMode, finish, bodyBlackout, audio }) => {
+export const playLiquidTransition = async ({
+  bar,
+  circle,
+  footer,
+  body,
+  setDarkMode,
+  bodyBlackout,
+  audio,
+  finish
+}) => {
   if (!bar || !circle || !footer || !body || !bodyBlackout) return;
 
   bodyBlackout = bodyBlackout.current;
@@ -6,75 +15,104 @@ export const playLiquidTransition = ({ bar, circle, footer, body, setDarkMode, f
   circle = circle.current;
   footer = footer.current;
   const video = body.current;
-  if (!video) return;
+  if (!video || !audio) return;
 
-  const startAnimation = async () => {
-    try {
-      // RESET
-      bar.classList.remove('navbar__transition__bar__fade__out');
-      bar.classList.add('navbar__transition__bar__changing');
-      circle.classList.add('navbar__bar__image__container__showed');
-      footer.classList.add('footer__transition');
+  // Delay util
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-      // Reproducir audio y video
-      audio.currentTime = 0;
-      await audio.play();
+  // Asegurar que el video esté cargado
+  video.preload = 'auto';
+  video.load();
+  await new Promise((resolve) => {
+    if (video.readyState >= 1) resolve();
+    else video.onloadedmetadata = resolve;
+  });
 
-      video.currentTime = 0;
-      video.classList.add("liquid__transition__effect__active");
-      video.playbackRate = video.duration / 3 || 1;
-      await video.play();
+  // Asegurar que el audio esté listo
+  audio.pause();
+  audio.currentTime = 0;
+  audio.load();
+  await new Promise((resolve) => {
+    const onCanPlay = () => {
+      audio.removeEventListener('canplaythrough', onCanPlay);
+      resolve();
+    };
+    audio.addEventListener('canplaythrough', onCanPlay);
+  });
 
-      // ⚠️ Esperar a que el video termine para cubrir bien
-      video.onended = () => {
-        // Mostrar blackout
-        bodyBlackout.classList.add("liquid__transition__effect__container__blackout");
+  // Configurar velocidad del video
+  video.currentTime = 0;
+  video.playbackRate = (video.duration || 3) / 3;
 
-        // Esperamos 1 frame para asegurar que se pintó el blackout antes de cambiar tema
-        requestAnimationFrame(() => {
-          // CAMBIO DE TEMA recién cuando el blackout cubre todo
-          setDarkMode(false);
-
-          // Limpiar cosas viejas
-          circle.classList.remove('navbar__bar__image__container__showed');
-          bar.classList.add('navbar__transition__bar__fade__out');
-          footer.classList.add('footer__fade__out');
-
-          video.classList.remove("liquid__transition__effect__active");
-          video.pause();
-
-          // FADE OUT DEL BLACKOUT
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              bodyBlackout.classList.remove("liquid__transition__effect__container__blackout");
-              bodyBlackout.classList.add("liquid__transition__effect__container__fade__out");
-            });
-          });
-
-          bodyBlackout.addEventListener("animationend", () => {
-            bodyBlackout.classList.remove("liquid__transition__effect__container__fade__out");
-            bar.classList.remove('navbar__transition__bar__changing');
-            footer.classList.remove('footer__fade__out');
-            footer.classList.remove('footer__transition');
-            finish();
-          }, { once: true });
-        });
-      };
-    } catch (err) {
-      console.error("Error en animación liquid:", err);
-    }
-  };
-
-  // Esperar a que el video esté cargado
-  if (video.readyState >= 2) {
-    startAnimation();
-  } else {
-    video.addEventListener("loadeddata", startAnimation, { once: true });
+  // Reproducir video y audio sincronizados
+  try {
+    await Promise.all([
+      video.play(),
+      audio.play()
+    ]);
+  } catch (e) {
+    console.warn('Error al reproducir video/audio', e);
   }
+
+  video.classList.add("liquid__transition__effect__active");
+
+  // Transición visual de nav/footer
+  bar.classList.add('navbar__transition__bar__changing');
+  circle.classList.add('navbar__bar__image__container__showed');
+  footer.classList.add('footer__transition');
+
+  // Esperar que transcurra la animación
+  await sleep(2500);
+
+  // Forzamos que quede negro aunque el video se reinicie
+  video.classList.add('liquid__force__blackout');
+
+  // Forzamos repaint antes de blackout
+  bodyBlackout.offsetHeight;
+  bodyBlackout.classList.add("liquid__transition__effect__container__blackout");
+
+  // Cambiar tema a light
+  setDarkMode(false);
+
+  // Detener audio
+  try {
+    audio.pause();
+    audio.currentTime = 0;
+  } catch (e) {
+    console.warn('Error al pausar audio', e);
+  }
+
+  video.classList.remove("liquid__transition__effect__active");
+
+  // Esperar un segundo de suspenso
+  await sleep(1000);
+
+  // Fadeout visual
+  circle.classList.remove('navbar__bar__image__container__showed');
+  bar.classList.add('navbar__transition__bar__fade__out');
+  footer.classList.add('footer__fade__out');
+  bodyBlackout.classList.add("liquid__transition__effect__container__fade__out");
+
+  // Esperar fadeout
+  await sleep(3000);
+
+  // Limpiar clases
+  bodyBlackout.classList.remove("liquid__transition__effect__container__blackout");
+  bar.classList.remove('navbar__transition__bar__changing');
+  footer.classList.remove('navbar__bar__image__container__showed');
+  footer.classList.remove("footer__transition");
+  bar.classList.remove('navbar__transition__bar__fade__out');
+  footer.classList.remove('footer__fade__out');
+  bodyBlackout.classList.remove("liquid__transition__effect__container__fade__out");
+  video.classList.remove('liquid__force__blackout');
+
+  // Terminar
+  finish();
+  
+  // Pausar el video
+  video.pause();
+  video.currentTime = 0;
 };
-
-
-
 
 
 export const playGlitchTransition = ({ glitch, setDarkMode, finish, audioStart, audioEnd }) => {
@@ -133,3 +171,14 @@ export const playGlitchTransition = ({ glitch, setDarkMode, finish, audioStart, 
     }
   }, { once: true });
 };
+
+
+
+
+
+
+
+
+
+
+

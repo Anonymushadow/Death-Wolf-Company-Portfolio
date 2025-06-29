@@ -1,43 +1,80 @@
 import "./Dark.css";
-import { useEffect } from "react";
-import { useThemeTransition } from "@contexts/TransitionThemeContext";
-import { GlitchEffect } from "@components/effects/Glitch/GlitchEffect";
+import { useEffect, useRef, useState } from "react";
 import { useModeText } from "@hooks/useModeText";
+import { DarkWarningAlert } from "@components/feedback/DarkWarningAlert/DarkWarningAlert";
 
 export const Dark = () => {
-    const { glitch } = useThemeTransition();
-    const texts = useModeText("dark"); 
+  const glitchRef = useRef(null);
+  const timeoutIdRef = useRef(null); // para guardar el timeout
+  const texts = useModeText("dark");
+  const [showModal, setShowModal] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
-    useEffect(() => {
-        let timeoutId;
+  let warningData = {
+    title: texts.warningTitle,
+    text: texts.warningText,
+    cta: texts.warningCTA,
+  };
 
-        const triggerPossession = () => {
-            if (!glitch.current) return;
+  // Cuando warningActive cambia
+  useEffect(() => {
+  const triggerPossession = () => {
+    if (!glitchRef.current) return;
 
-            glitch.current.classList.remove("glitch__effect__container__possessed");
-            void glitch.current.offsetWidth;
-            glitch.current.classList.add("glitch__effect__container__possessed");
+    glitchRef.current.classList.remove("glitch__effect__container__possessed");
+    void glitchRef.current.offsetWidth;
+    glitchRef.current.classList.add("glitch__effect__container__possessed");
 
-            // Generar un nuevo tiempo aleatorio para el próximo glitch
-            const nextGlitchIn = Math.random() * 4000 + 3000; // entre 3s y 7s
+    const nextGlitchIn = Math.random() * 4000 + 3000;
+    timeoutIdRef.current = setTimeout(triggerPossession, nextGlitchIn);
+  };
 
-            timeoutId = setTimeout(triggerPossession, nextGlitchIn);
-        };
+  if (showModal) {
+    clearTimeout(timeoutIdRef.current); // pausa glitch mientras el modal está abierto
+  } else {
+    triggerPossession(); // reanuda glitch cuando modal se cierra
+  }
 
-        triggerPossession(); // primer disparo
+  return () => clearTimeout(timeoutIdRef.current);
+}, [showModal]);
 
-        return () => clearTimeout(timeoutId); // cleanup cuando el componente se desmonta
-    }, [glitch]);
+  const handleClick = () => {
+    if (isClosing) return; // evita doble click
 
-    return (
-        <>
-            <GlitchEffect />
-            <div className="dark__content__container">
-                <h1 className="dark__content__title">
-                    { texts.title }
-                </h1>
-                <button className="dark__content__button">{ texts.cta }</button>
-            </div>
-        </>
-    );
+    if (showModal) {
+      setIsClosing(true); // activa animación de salida
+      setTimeout(() => {
+        setShowModal(false);
+        setIsClosing(false);
+      }, 400); // igual al tiempo de animación CSS
+    } else {
+      setShowModal(true); // abre directamente
+    }
+  };
+
+  return (
+    <>
+      {showModal && (
+        <DarkWarningAlert
+          {...warningData}
+          handleClick={handleClick}
+          isClosing={isClosing}
+        />
+      )}
+      <div
+        ref={glitchRef}
+        className="glitch__effect__container"
+      ></div>
+
+      <div className="dark__content__container">
+        <h1 className="dark__content__title">{texts.title}</h1>
+        <button
+          className="dark__content__button"
+          onClick={handleClick}
+        >
+          {texts.cta}
+        </button>
+      </div>
+    </>
+  );
 };

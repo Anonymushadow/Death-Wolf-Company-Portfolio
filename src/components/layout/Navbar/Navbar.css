@@ -86,10 +86,10 @@
   height: 100%;
   background: var(--color__negro__estatico);
   transform: translate(-50%);
-  transition: width 3s;
 }
 .navbar__transition__bar__changing {
   width: 100%;
+  transition: width 3s;
 }
 .navbar__transition__bar__fade__out {
   opacity: 0;

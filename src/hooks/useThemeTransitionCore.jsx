@@ -13,7 +13,14 @@ export const useThemeTransitionCore = () => {
   const audioGlitchStartRef = useRef(null);
   const audioGlitchEndRef = useRef(null);
 
-   // Precarga de audios
+  useEffect(() => {
+    audioLiquidRef.current = document.getElementById("liquid");
+    audioGlitchStartRef.current = document.getElementById("glitch-start");
+    audioGlitchEndRef.current = document.getElementById("glitch-end");
+  }, []);
+
+
+  // Precarga de audios
   const precacheAudios = () => {
     audioLiquidRef.current = new Audio('/audios/blood.mp3');
     audioLiquidRef.current.preload = 'auto';
@@ -29,7 +36,7 @@ export const useThemeTransitionCore = () => {
     audioGlitchStartRef.current.load();
     audioGlitchEndRef.current.load();
   };
-  
+
   useEffect(() => {
     precacheAudios();
   }, []);
