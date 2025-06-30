@@ -7,6 +7,7 @@ export const Pack = () => {
   const { texts } = useLang();
   const text = texts.pack;
 
+  console.log(text)
   const navigate = useNavigate();
 
   const navigateToPack = () => {
@@ -33,7 +34,7 @@ export const Pack = () => {
                 }
             </div>
             <div className="home__pack__section__button__container">
-                <button className="home__pack__section__button" onClick={navigateToPack}> {text.cta} </button>
+                <button className="home__pack__section__button" onClick={navigateToPack}> {text.wolf.cta} </button>
             </div>
         </section>
     );
