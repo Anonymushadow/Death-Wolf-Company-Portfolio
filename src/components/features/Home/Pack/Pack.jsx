@@ -7,7 +7,6 @@ export const Pack = () => {
   const { texts } = useLang();
   const text = texts.pack;
 
-  console.log(text)
   const navigate = useNavigate();
 
   const navigateToPack = () => {
