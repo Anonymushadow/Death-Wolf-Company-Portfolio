@@ -6,7 +6,7 @@ export const about = {
     },
     {
       title: 'El Comienzo de una Idea',
-      text: 'Durante la pandemia, cuando todo se vino abajo, me encontré con una pregunta que no quería hacerme:\n¿Qué pasaría si mañana me quedo sin nada?\nDe esa incertidumbre nació algo, aunque en ese momento no tenía idea de que estaba empezando algo grande. Solo sabía que tenía que hacer algo',
+      text: 'Durante la pandemia, cuando todo se vino abajo, me encontré con una pregunta que no quería hacerme:\n¿Qué pasaría si mañana me quedo sin nada?\nDe esa incertidumbre nació una chispa, No sabía en qué iba a convertirse, pero entendí que quedarse quieto no era opción.',
     },
     {
       title: 'El Primer Paso: Golden Wolf Company',
@@ -40,11 +40,11 @@ export const about = {
     },
     {
       title: 'La muerte es la verdadera vida',
-      text: 'Me fui al fondo. Así, sin vueltas. Lo que era, dejó de ser. La marca murió y con ella, todo lo que pensaba que era.\nPero ahí, entre los restos, vimos claro. Ya no teníamos que aparentar nada. Ya no había nada que cuidar. Y cuando no te queda nada que perder, recién ahí sos libre.\nNos arrastramos entre las ruinas y encontramos lo que otros dejaron tirado. No para copiarlo, sino para romperlo todo y armar algo que grite lo que somos.\nEsto no es un nuevo comienzo. Es la parte donde dejamos de pedir permiso.',
+      text: 'Me fui al fondo. Así, sin vueltas. Lo que era, dejó de ser. La marca murió y con ella, todo lo que pensaba que era.\nPero ahí, entre los restos, vimos claro. Ya no teníamos que aparentar nada. Ya no había máscaras que cuidar. Y cuando no te queda nada que perder, recién ahí sos libre.\nNos arrastramos entre las ruinas y encontramos lo que otros dejaron tirado. No para copiarlo, sino para romperlo todo y armar algo que grite lo que somos.\nEsto no es un nuevo comienzo. Es la parte donde dejamos de pedir permiso.',
     },
     {
       title: 'Por años me tragué mi vómito',
-      text: 'Intenté encajar. Me disfracé, me maquillé la identidad, diseñé para agradar. Pero cuanto más intentaba adaptarme, más asco me daba todo. Me estaba traicionando sin darme cuenta.\nTragué mi propio vómito con tal de no molestar, de ser parte del rebaño. Hasta que el sabor se volvió insoportable.\nAhí entendí: no se trata de encajar, se trata de romper. No tengo que seguir reglas ajenas. Tengo que ser yo, sin filtros, sin permiso.\nY si al mundo no le gusta, que aprenda a adaptarse.',
+      text: 'Intenté encajar. Me disfracé, maquillé lo que era, diseñé para agradar. Pero cuanto más intentaba adaptarme, más asco me daba todo. Me estaba traicionando sin darme cuenta.\nTragué mi propio vómito con tal de no incomodar, de pertenecer al rebaño. Hasta que el sabor se volvió insoportable.\nAhí entendí: no se trata de encajar, se trata de romper. No tengo que seguir reglas ajenas. Tengo que ser yo, sin filtros y sin pedir permiso.\nY si al mundo no le gusta, que aprenda a adaptarse.',
     },
     {
       title: 'La escoria forjó mi camino',

@@ -6,7 +6,7 @@ export const about = {
     },
     {
       title: 'The Birth of an Idea',
-      text: 'During the pandemic, when everything fell apart, I faced a question I didn’t want to ask:\nWhat if tomorrow I lose everything?\nFrom that uncertainty, something was born. I had no idea it was the beginning of something big. I just knew I had to act.',
+      text: 'During the pandemic, when everything fell apart, I faced a question I didn’t want to ask:\nWhat if tomorrow I lose everything?\From that uncertainty, a spark ignited. I didn’t know it was the start of something bigger. I just knew I had to act.',
     },
     {
       title: 'The First Step: Golden Wolf Company',
@@ -14,7 +14,7 @@ export const about = {
     },
     {
       title: 'The Turn: Elite Wolf Company',
-      text: 'So I tried to reinvent myself. I changed direction and created Elite Wolf Company.\nI thought I was ready to be different, but something still didn’t feel right. It still carried that recycled vibe, like it wasn’t really mine. It was like standing on a foundation that didn’t belong to me.\nThat’s when I knew I wouldn’t find what I was looking for with that formula.',
+      text: 'So I tried to reinvent myself. I changed direction and created Elite Wolf Company.\nI thought I was ready to be different, but something still didn’t feel right. still reeked of something reused—like it never belonged to me. It was like standing on a foundation that didn’t belong to me.\nThat’s when I knew I wouldn’t find what I was looking for with that formula.',
     },
     {
       title: 'The Silence',
@@ -22,7 +22,7 @@ export const about = {
     },
     {
       title: 'The Reality',
-      text: 'What once looked like the road to success started to crumble.\nWhat I imagined as a luxury brand turned into a hollow illusion. The gold, the shine… all of it lost its meaning once I realized the real weight dragging me down was the pressure to fit into some polished image of what I “should” be.',
+      text: 'What once looked like the road to success started to crumble.\nWhat I imagined as a luxury brand turned into an empty illusion. The gold, the glow… it all lost its meaning once I realized the real weight dragging me down was the pressure to fit into some polished image of what I “should” be.',
     },
     {
       title: 'The Breakdown',
@@ -44,11 +44,11 @@ export const about = {
     },
     {
       title: 'For Years, I Swallowed My Own Vomit',
-      text: 'I tried to fit in. I masked myself, made my identity pretty, designed to please. But the more I tried to adapt, the more disgusted I felt. I was betraying myself without even noticing.\nI swallowed my own vomit just to avoid conflict, to be part of the flock. Until the taste became unbearable.\nThat’s when I realized: it’s not about fitting in, it’s about breaking out. I don’t need to follow their rules. I need to be me—unfiltered, unapologetic.\nAnd if the world can’t handle that, then the world better adapt.',
+      text: 'I tried to fit in. I masked myself, made my identity pretty, designed to please. But the more I tried to adapt, the more disgusted I felt. I was betraying myself without even noticing.\nI swallowed my own vomit just to avoid conflict, to be part of the flock. Until the taste became unbearable.\nThat’s when I realized: it’s not about fitting in, it’s about breaking out. I don’t need to follow their rules. I need to be me—raw, untamed, unrepentant.\nAnd if the world can’t handle that, then the world better adapt.',
     },
     {
       title: 'Filth Forged My Path',
-      text: 'I’m not afraid of what society discards. The unwanted, the self-loathing—those are the ones defining the new way forward. I don’t mirror them, but I take everything they’ve got—everything they can’t reach. I absorb the worst, the darkest, the rawest. The disgust they provoke gives me strength—not just to break the mold, but to create something they couldn’t even imagine.',
+      text: 'I’m not afraid of what society discards. The unwanted, the self-loathing—those are the ones defining the new way forward. I don’t mirror them, but I take everything they’ve got—everything they can’t reach. I absorb the worst, the darkest, the rawest. Their disgust feeds me. Not just to break the mold—but to build what they never dared to dream.',
     },
     {
       title: 'From Lost Souls to First Revenants',
