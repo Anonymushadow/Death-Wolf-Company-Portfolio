@@ -2,7 +2,7 @@ import React from 'react';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
-import { registerSW } from 'virtual:pwa-register'
+import { registerSW } from "virtual:pwa-register";
 
 import { ThemeTransitionProvider } from '@contexts/TransitionThemeContext.jsx';
 import { LanguageProvider } from '@contexts/LanguageContext.jsx';
@@ -10,9 +10,12 @@ import '@styles/base/styles.main.js';
 import { styles } from '@config/styles.js';
 
 const updateSW = registerSW({
-  onNeedRefresh() {},
-  onOfflineReady() {},
-})
+    onNeedRefresh() {
+        if (confirm("Hay una nueva versión disponible. ¿Actualizar?")) {
+            updateSW(true);
+        }
+    },
+});
 
 styles.forEach((stylePath) => {
   const link = document.createElement('link');

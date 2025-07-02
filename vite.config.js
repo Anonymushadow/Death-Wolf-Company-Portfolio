@@ -1,14 +1,13 @@
-import { defineConfig } from 'vite';
-import { VitePWA } from 'vite-plugin-pwa';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { VitePWA } from "vite-plugin-pwa";
 
-
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: "autoUpdate",,
       includeAssets: [
         'icons/PWA/DWC-Logo-Primario-192.png',
         'icons/PWA/DWC-Logo-Primario-512.png'
@@ -17,23 +16,26 @@ export default defineConfig({
         name: 'Death Wolf Company',
         short_name: 'DWC',
         description: 'Portfolio Web de Death Wolf Company',
-        start_url: '/',
-        display: 'standalone',
-        background_color: '#000000',
         theme_color: '#4e0789',
+        background_color: '#000000',
+        display: 'standalone',
+        start_url: '/',
         icons: [
           {
-            src: 'DWC-Logo-Primario-192.png',
+            src: '/DWC-Logo-Primario-192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'DWC-Logo-Primario-512.png',
+            src: '/DWC-Logo-Primario-512.png',
             sizes: '512x512',
             type: 'image/png'
           }
         ]
-      }
+      },
+      devOptions: {
+        enabled: false, // No usar PWA en modo dev
+      },
     })
   ],
   resolve: {
