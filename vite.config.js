@@ -7,33 +7,37 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: "autoUpdate",
+      registerType: 'autoUpdate',
       includeAssets: [
-        "icons/PWA/dwc-logo-primario-192.png",
-        "icons/PWA/dwc-logo-primario-512.png"
+        'favicon.svg',
+        'robots.txt',
+        'apple-touch-icon.png',
+        'icons/PWA/dwc-logo-primario-192.png',
+        'icons/PWA/dwc-logo-primario-512.png'
       ],
       manifest: {
-        name: "Death Wolf Company",
-        short_name: "DWC",
-        description: "Portfolio Web de Death Wolf Company",
-        theme_color: "#4e0789",
-        background_color: "#000000",
-        display: "standalone", // Hace que se vea como una app nativa
-        start_url: "/", // URL de inicio
+        name: 'Death Wolf Company',
+        short_name: 'DWC',
+        description: 'El lado oscuro de la web, ahora offline también.',
+        theme_color: '#000000',
+        background_color: '#ffffff',
+        display: 'standalone',
+        start_url: '/',
         icons: [
           {
-            src: "/icons/PWA/dwc-logo-primario-192.png",
-            sizes: "192x192",
-            type: "image/png",
+            src: 'icons/PWA/dwc-logo-primario-192.png',
+            sizes: '192x192',
+            type: 'image/png'
           },
           {
-            src: "/icons/PWA/dwc-logo-primario-512.png",
-            sizes: "512x512",
-            type: "image/png",
+            src: 'icons/PWA/dwc-logo-primario-512.png',
+            sizes: '512x512',
+            type: 'image/png'
           }
         ]
       }
     })
+
   ],
   resolve: {
     alias: {

@@ -9,13 +9,7 @@ import { LanguageProvider } from '@contexts/LanguageContext.jsx';
 import '@styles/base/styles.main.js';
 import { styles } from '@config/styles.js';
 
-const updateSW = registerSW({
-    onNeedRefresh() {
-        if (confirm("Hay una nueva versión disponible. ¿Actualizar?")) {
-            updateSW(true);
-        }
-    },
-});
+registerSW(); // se encarga de todo (autoUpdate)
 
 styles.forEach((stylePath) => {
   const link = document.createElement('link');
