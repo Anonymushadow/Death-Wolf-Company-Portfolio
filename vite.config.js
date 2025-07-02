@@ -9,7 +9,10 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icons/PWA'],
+      includeAssets: [
+        'icons/PWA/DWC-Logo-Primario-192.png',
+        'icons/PWA/DWC-Logo-Primario-512.png'
+      ],
       manifest: {
         name: 'Death Wolf Company',
         short_name: 'DWC',
@@ -20,12 +23,12 @@ export default defineConfig({
         theme_color: '#4e0789',
         icons: [
           {
-            src: 'icons/PWA/DWC-Logo-Primario-192.png',
+            src: 'DWC-Logo-Primario-192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'icons/PWA/DWC-Logo-Primario-512.png',
+            src: 'DWC-Logo-Primario-512.png',
             sizes: '512x512',
             type: 'image/png'
           }
