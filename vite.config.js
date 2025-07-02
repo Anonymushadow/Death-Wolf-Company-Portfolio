@@ -7,11 +7,8 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
-        includeAssets: [
-          'icons/PWA/DWC-Logo-Primario-192.png',
-          'icons/PWA/DWC-Logo-Primario-512.png'
-        ],
+     registerType: 'autoUpdate',
+      includeAssets: ['icons/PWA'], // Copia toda la carpeta directamente
       manifest: false,
       start_url: '/',
       display: 'standalone',
