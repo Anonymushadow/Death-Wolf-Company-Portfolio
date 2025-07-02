@@ -22,20 +22,17 @@ export default defineConfig({
         start_url: "/", // URL de inicio
         icons: [
           {
-            src: "icons/PWA/dwc-logo-primario-192.png",
+            src: "/icons/PWA/dwc-logo-primario-192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "icons/PWA/dwc-logo-primario-512.png",
+            src: "/icons/PWA/dwc-logo-primario-512.png",
             sizes: "512x512",
             type: "image/png",
           }
         ]
-      },
-      devOptions: {
-        enabled: false, // No usar PWA en modo dev
-      },
+      }
     })
   ],
   resolve: {
