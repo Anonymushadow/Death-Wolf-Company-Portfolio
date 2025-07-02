@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: "autoUpdate",,
+      registerType: "autoUpdate",
       includeAssets: [
         'icons/PWA/DWC-Logo-Primario-192.png',
         'icons/PWA/DWC-Logo-Primario-512.png'
